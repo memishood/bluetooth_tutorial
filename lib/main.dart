@@ -1,5 +1,7 @@
 import 'package:bluetooth_tutorial/common_ui/resources/strings.dart';
 import 'package:bluetooth_tutorial/features/bluetooth_off/bluetooth_off.dart';
+import 'package:bluetooth_tutorial/features/connected_devices/connected_devices.dart';
+import 'package:bluetooth_tutorial/features/device/device.dart';
 import 'package:bluetooth_tutorial/features/find_devices/find_devices.dart';
 import 'package:bluetooth_tutorial/features/splash/splash.dart';
 import 'package:flutter/material.dart';
@@ -36,6 +38,18 @@ class App extends StatelessWidget {
           name: '/bluetooth-off',
           page: BluetoothOffScreen.new,
           transition: Transition.leftToRightWithFade,
+        ),
+        GetPage<ConnectedDevicesScreen>(
+          name: '/connected-devices',
+          page: ConnectedDevicesScreen.new,
+          binding: ConnectedDevicesBinding(),
+          transition: Transition.rightToLeftWithFade,
+        ),
+        GetPage<DeviceScreen>(
+          name: '/device',
+          page: DeviceScreen.new,
+          binding: DeviceBinding(),
+          transition: Transition.fadeIn,
         ),
       ],
     );
