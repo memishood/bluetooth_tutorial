@@ -1,4 +1,6 @@
 import 'package:bluetooth_tutorial/common_ui/resources/strings.dart';
+import 'package:bluetooth_tutorial/features/bluetooth_off/bluetooth_off.dart';
+import 'package:bluetooth_tutorial/features/find_devices/find_devices.dart';
 import 'package:bluetooth_tutorial/features/splash/splash.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
@@ -24,6 +26,16 @@ class App extends StatelessWidget {
           name: '/splash',
           page: SplashScreen.new,
           binding: SplashBinding(),
+        ),
+        GetPage<FindDevicesScreen>(
+            name: '/find-devices',
+            page: FindDevicesScreen.new,
+            binding: FindDevicesBinding(),
+            transition: Transition.rightToLeftWithFade),
+        GetPage<BluetoothOffScreen>(
+          name: '/bluetooth-off',
+          page: BluetoothOffScreen.new,
+          transition: Transition.leftToRightWithFade,
         ),
       ],
     );
